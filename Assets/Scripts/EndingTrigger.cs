@@ -13,6 +13,31 @@ public enum EndingType
 public class EndingTrigger : MonoBehaviour
 {
     public EndingType ending = EndingType.other;
+    public Animator anim;
+    private AnimatorStateInfo stateInfo;
+    public bool isPlayed = false;
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+    void Update()
+    {
+
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+        // 如果是按钮动画就把手臂也隐藏掉
+        if(stateInfo.IsName("Button")){
+            GameObject.Find("Hand").SetActive(false);
+        }
+
+        //动画播放完之后把自己隐藏掉,顺便把手臂“放”出来
+        if (!stateInfo.IsName(gameObject.name) && isPlayed) {
+            Debug.Log(stateInfo.normalizedTime);
+            gameObject.SetActive(false);
+            GameObject.Find("Hand").SetActive(true);
+        }
+
+    }
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Collide");
@@ -26,6 +51,9 @@ public class EndingTrigger : MonoBehaviour
         {
             handMove.StopMoving();
         }
+
+        anim.Play(gameObject.name);
+        isPlayed = true;
 
         Debug.Log(name);
     }

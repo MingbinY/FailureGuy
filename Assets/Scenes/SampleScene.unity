@@ -1002,7 +1002,7 @@ MonoBehaviour:
   debug: 1
   rotationTop: {x: 0, y: 0, z: 35}
   rotationDown: {x: 0, y: 0, z: 9}
-  rotationSpeed: 20
+  rotationSpeed: 40
   rotateUp: 0
 --- !u!114 &1434014051
 MonoBehaviour:
@@ -1304,7 +1304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1845462592
 Transform:
   m_ObjectHideFlags: 0

@@ -47,3 +47,6 @@ TagManager:
   - name: Hand
     uniqueID: 3433089313
     locked: 0
+  - name: Infront
+    uniqueID: 1535591097
+    locked: 0

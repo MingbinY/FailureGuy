@@ -29,11 +29,16 @@ public class EndingTrigger : MonoBehaviour
         {
             handMove.StopMoving();
         }
-        
+
+        StartCoroutine(EndSequence());
+    }
+
+    IEnumerator EndSequence()
+    {
+        yield return new WaitForSeconds(1.0f);
         if (endingObj != null)
         {
             endingObj.TriggerEnding();
         }
-        Debug.Log(name);
     }
 }

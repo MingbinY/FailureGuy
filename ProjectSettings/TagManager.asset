@@ -50,3 +50,6 @@ TagManager:
   - name: Infront
     uniqueID: 1535591097
     locked: 0
+  - name: Cover
+    uniqueID: 167647093
+    locked: 0

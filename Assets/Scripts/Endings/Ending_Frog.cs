@@ -30,5 +30,7 @@ public class Ending_Frog : Ending
         }
         yield return new WaitForSeconds(frogFadeInTime);
         frogAnim.GetComponent<Animator>().SetTrigger("FrogJump");
+        yield return new WaitForSeconds(5);
+        RestartGame();
     }
 }

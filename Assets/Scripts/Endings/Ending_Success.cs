@@ -15,10 +15,7 @@ public class Ending_Success : Ending
     {
         yield return null;
         //Switch Cam
-        endingCam.gameObject.SetActive(true);
-        Camera.main.gameObject.SetActive(false);
-        yield return new WaitForSeconds(1f);
-        successAnim.SetActive(true);
-
+        yield return new WaitForSeconds(3);
+        RestartGame();
     }
 }

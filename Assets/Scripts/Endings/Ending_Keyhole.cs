@@ -19,5 +19,7 @@ public class Ending_Keyhole : Ending
         Camera.main.gameObject.SetActive(false);
         yield return new WaitForSeconds(1f);
         keyholeAnim.SetActive(true);
+        yield return new WaitForSeconds(5);
+        RestartGame();
     }
 }

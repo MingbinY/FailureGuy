@@ -23,7 +23,7 @@ public class Ending_Hair : Ending
         hairAnim.transform.localRotation = handObj.transform.localRotation;
         hairAnim.transform.localPosition = handObj.transform.localPosition;
         handObj.SetActive(false);
-        yield return null;
-
+        yield return new WaitForSeconds(5);
+        RestartGame();
     }
 }

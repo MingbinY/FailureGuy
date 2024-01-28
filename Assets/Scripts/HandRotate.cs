@@ -11,6 +11,7 @@ public class HandRotate : MonoBehaviour
     public Vector3 rotationTop;
     public Vector3 rotationDown;
     public float rotationSpeed = 1.0f;
+    public float rotationSpeedChange = 1.0f;
     private bool rotating = false;
 
     [SerializeField]bool rotateUp = false;
@@ -59,6 +60,7 @@ public class HandRotate : MonoBehaviour
                     transform.localRotation = Quaternion.Euler(targetRot);
                 }
             }
+            rotationSpeed += Time.deltaTime * rotationSpeedChange;
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum EndingType
 {
@@ -21,16 +22,23 @@ public class EndingTrigger : MonoBehaviour
         Debug.Log("Collide");
         HandRotate handRotate = other.GetComponent<HandRotate>();
         HandMove handMove = other.GetComponent<HandMove>();
-        if (handRotate != null)
+        if (endingObj)
         {
-            handRotate.StopRotate();
-        }
-        if (handMove != null)
-        {
-            handMove.StopMoving();
-        }
+            if (handRotate != null)
+            {
+                handRotate.StopRotate();
+            }
+            if (handMove != null)
+            {
+                handMove.StopMoving();
+            }
 
-        StartCoroutine(EndSequence());
+            StartCoroutine(EndSequence());
+        }
+        else
+        {
+            StartCoroutine(RestartGameSequence());
+        }
     }
 
     IEnumerator EndSequence()
@@ -40,5 +48,11 @@ public class EndingTrigger : MonoBehaviour
         {
             endingObj.TriggerEnding();
         }
+    }
+
+    IEnumerator RestartGameSequence()
+    {
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene(1);
     }
 }

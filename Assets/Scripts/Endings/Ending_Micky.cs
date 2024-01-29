@@ -32,7 +32,7 @@ public class Ending_Micky : Ending
         }
         mickyAnim.SetActive(true);
         PlayEndingSound(true);
-        yield return new WaitForSeconds(endingSound.length);
+        yield return new WaitForSeconds(endingSound.length*0.6f);
         RestartGame();
     }
 }

@@ -29,6 +29,7 @@ public class Ending_Frog : Ending
             sm.FadeOut(character.GetComponent<SpriteRenderer>(), characterFadeOutTime);
         }
         yield return new WaitForSeconds(frogFadeInTime);
+        PlayEndingSound();
         frogAnim.GetComponent<Animator>().SetTrigger("FrogJump");
         yield return new WaitForSeconds(5);
         RestartGame();

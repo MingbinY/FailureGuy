@@ -3828,7 +3828,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ea77313d76dd484692e11758de37314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 2
 --- !u!65 &1434014052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4273,7 +4273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endingCam: {fileID: 930207356}
-  endingSound: {fileID: 0}
+  endingSound: {fileID: 8300000, guid: 4d874f4bd7d5e6b4f9b8a39a56f1bce7, type: 3}
   frogAnim: {fileID: 1845462591}
   character: {fileID: 1552037951}
   frogFadeInTime: 3
